@@ -1,0 +1,10 @@
+import socket 
+ip = raw_input('digite o ip de conexao: ') 
+port = int(raw_input('digite a porta: '))
+addr = (ip,port) 
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+client_socket.connect(addr) 
+mensagem = raw_input("digite uma mensagem para enviar ao servidor: ") 
+client_socket.send(mensagem) 
+print ('mensagem enviada') 
+client_socket.close()
